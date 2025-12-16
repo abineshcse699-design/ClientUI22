@@ -1,0 +1,39 @@
+/* MUST be first — nothing before this except comments */
+@use '@angular/material' as mat;
+
+/* Tailwind must come AFTER @use */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind base styles */
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-center my-8;
+  }
+}
+
+/* Angular Material theme */
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
