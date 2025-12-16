@@ -49,7 +49,13 @@ import { A11yModule } from "@angular/cdk/a11y";
 ],
   templateUrl: './prac2.html',
 
-  styleUrl: './prac2.scss',
+  styleUrls: [
+    './prac2.scss',
+    './prac3.scss',
+    './prac4.scss',
+    './prac5.scss',
+    "./prac6.scss",
+  ]
 
 
 })

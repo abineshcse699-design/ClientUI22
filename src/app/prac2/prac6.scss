@@ -1,0 +1,223 @@
+/* Details Card */
+.details-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  ::ng-deep {
+    .mat-mdc-card {
+      padding: 0;
+    }
+
+    .mat-mdc-card-header {
+      background: linear-gradient(135deg, #2d5b52 0%, #1f4038 100%);
+      border-bottom: 3px solid #d4e834;
+      border-radius: 8px 8px 0 0 !important;
+      padding: 1.5rem !important;
+      margin: 0 !important;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .mat-mdc-card-title {
+      font-size: 1.5rem !important;
+      font-weight: 600 !important;
+      color: white !important;
+      margin: 0 !important;
+    }
+
+    .mat-mdc-card-content {
+      padding: 1.5rem !important;
+    }
+
+    .mat-mdc-icon-button {
+      color: white;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+
+        mat-icon {
+          color: #d4e834;
+        }
+      }
+    }
+  }
+
+  .details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2d5b52;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  ::ng-deep {
+    mat-chip {
+      font-size: 1rem !important;
+      padding: 0.5rem 1rem !important;
+      border-radius: 16px !important;
+      height: auto !important;
+      min-height: 32px !important;
+
+      &:not([highlighted]) {
+        background: #d9e8e5 !important;
+        border: 1px solid #2d5b52 !important;
+        color: #1a3b35 !important;
+      }
+
+      &[highlighted] {
+        background: #d4e834 !important;
+        border: 1px solid #b8cc2a !important;
+        color: #1a3b35 !important;
+        font-weight: 500 !important;
+      }
+    }
+  }
+}
+
+/* Global Material Overrides */
+::ng-deep {
+  .mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #2d5b52 !important;
+    --mdc-protected-button-label-text-color: white !important;
+
+    &:hover {
+      --mdc-protected-button-container-color: #1f4038 !important;
+    }
+  }
+
+  .mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: #2d5b52 !important;
+  }
+
+  /* UPOV Menu Styling */
+  .upov-menu {
+    .mat-mdc-menu-content {
+      padding: 0 !important;
+    }
+
+    .mat-mdc-menu-panel {
+      background: #d4e834 !important;
+      border-radius: 0 0 8px 8px !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      max-width: 280px !important;
+      margin-top: 0.5rem;
+    }
+
+    .menu-section {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(45, 91, 82, 0.15);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .menu-heading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2d5b52;
+      padding: 0.5rem 1.25rem;
+      margin: 0;
+      text-transform: none;
+    }
+
+    .mat-mdc-menu-item {
+      color: #2d5b52 !important;
+      font-size: 0.9rem;
+      min-height: 40px;
+      padding: 0 1.25rem !important;
+      line-height: 40px;
+
+      &:hover {
+        background: rgba(45, 91, 82, 0.1) !important;
+      }
+
+      &.menu-sub-item {
+        padding-left: 2.5rem !important;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+/* Expanded Details Section */
+.expanded-details {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  width: 95%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-details .details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.expanded-details .row {
+  display: flex;
+  gap: 85px;
+  margin-top: 20px;
+}
+
+.expanded-details .row.two-col {
+  display: flex;
+  gap: 85px;
+}
+
+.expanded-details .col {
+  flex: 1;
+}
+
+.expanded-details .label {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.expanded-details .value {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.expanded-details .value.link {
+  color: #0C3C35;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.expanded-details .row.single {
+  flex-direction: column;
+}
+
