@@ -6,7 +6,7 @@ import { Prac2 } from "./prac2/prac2";
 
 @Component({
   selector: 'app-root',
-  imports: [Prac2],
+  imports: [Prac2, Ngmain],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

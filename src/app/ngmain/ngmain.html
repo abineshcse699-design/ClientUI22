@@ -1,6 +1,16 @@
 
 
 
+<button mat-button (click)="changeLang('en')">Spanish</button>
+<button mat-button (click)="changeLang('es')">English</button>
+<button mat-button (click)="changeLang('de')">Deutsch</button>
+<button mat-button (click)="changeLang('fr')">Français</button>
+
+
+
+
+<div class="maint">
+
 
 
 <div class="main">
@@ -29,7 +39,7 @@
   </svg>
 </div>
 
-   <div style="color: #1f4e45;">Back to specie deatil</div>
+   <div style="color: #1f4e45;">{{translationService.translate('BACK_TO_SPECIES')}}</div>
 
       </div>
 
@@ -39,7 +49,8 @@
       <div><img src="https://flagcdn.com/w80/au.png"></div>
 
 
-     <div class=""><h2 style="color: #1f4e45;">  Australia <span>AL</span></h2></div>
+     <div class=""><h2 style="color: #1f4e45;"> {{translationService.translate('Australia')}}  <span>AL</span></h2></div>
+
     </div>
 
 </div>
@@ -47,7 +58,9 @@
 
 
    <div class="btn1">
- <button  style="color: aliceblue;" >All genera and species</button>
+ <button  style="color: aliceblue;" > {{translationService.translate( "ALL_GENERA")}}</button>
+
+
   </div>
 
     </div>
@@ -69,7 +82,7 @@
 
                   <path d="M8 12.5L11 15.5L16 9.5" stroke="#1f4e45" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-                </svg> Protection <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" fill="#1f4e45">
+                </svg> {{translationService.translate('PROTECTION')}}<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" fill="#1f4e45">
                 <path
                   d="M24 4q8.25 0 14.125 5.875Q44 15.75 44 24q0 8.25-5.875 14.125Q32.25 44 24 44q-8.25 0-14.125-5.875Q4 32.25 4 24q0-8.25 5.875-14.125Q15.75 4 24 4Zm0 36q6.6 0 11.3-4.7Q40 30.6 40 24q0-6.6-4.7-11.3Q30.6 8 24 8q-6.6 0-11.3 4.7Q8 18.4 8 24q0 6.6 4.7 11.3Q18.4 40 24 40Zm-2-6h4V22h-4v12Zm2-16q.85 0 1.425-.575Q26 16.85 26 16q0-.85-.575-1.425Q24.85 14 24 14q-.85 0-1.425.575Q22 15.15 22 16q0 .85.575 1.425Q23.15 18 24 18Z" />
               </svg>
@@ -80,7 +93,8 @@
    (click)="togglebut()"
     [class.active]="activeTab === 'dus'"
     (click)="setTab('dus')">
-    DUS Guidance and Cooperation
+    {{translationService.translate('DUS')}}
+
 
   </div>
 
@@ -100,18 +114,15 @@
   </div>
 
 
-          <h2 *ngIf="showBUTiew" >Member of UPOV which offer protection <span class="count">(148)</span></h2>
+          <h2 *ngIf="showBUTiew" > {{translationService.translate('MEMBER_UPOV') }} <span class="count">(148)</span></h2>
 
-          <label class="label" *ngIf="showBUTiew">Select the authority</label>
-
-
-
+          <label class="label" *ngIf="showBUTiew">{{translationService.translate('SELECT_AUTHORITY')}}</label >
 
 <div class="tgbut" >
   <div class="dropdown-container" *ngIf="showBUTiew">
     <!-- SEARCH INPUT -->
 <mat-form-field appearance="outline" class="search-field">
-  <mat-label>Authority name or ISO code</mat-label>
+  <mat-label> {{translationService.translate('AUTHORITY_SEARCH')}}</mat-label>
 
   <input
     matInput
@@ -133,7 +144,7 @@
 
     <!-- SEARCH INPUT -->
 <mat-form-field appearance="outline" class="search-field">
-  <mat-label>Authority name or ISO code</mat-label>
+  <mat-label> {{translationService.translate('AUTHORITY_SEARCH')}}</mat-label>
 
   <input
     matInput
@@ -215,9 +226,9 @@
 
   <!-- CONTACT CARD -->
       <div class="contact-card">
-        <h3>Contact information</h3>
+        <h3> {{translationService.translate('CONTACT_INFO')}}</h3>
 
-        <p><strong>The Registrar</strong><br>Plant Breeder's Rights</p>
+        <p><strong>{{translationService.translate('REGISTRAR')}}</strong><br>{{translationService.translate('PBR')}}Plant Breeder's Rights</p>
 
         <div class="contact-item">
           <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -278,7 +289,8 @@
 
       <!-- LEFT TEXT -->
       <div class="left-text">
-        This member of the Union <strong>protects the whole or essentially <br>the whole plant kingdom.</strong>
+        {{translationService.translate('PLANT_KINGDOM')}}
+
       </div>
 
       <!-- CONTACT CARD -->
@@ -334,7 +346,7 @@
 
 
 
-
+</div>
 
 
 

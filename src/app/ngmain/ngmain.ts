@@ -24,6 +24,8 @@ import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 // import { Second } from '../second/second';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { A11yModule } from "@angular/cdk/a11y";
+import { TranslationService } from '../services/translation.service';
+
 
 
 @Component({
@@ -92,6 +94,12 @@ export class Ngmain {
 
     ]
 
+constructor(public translationService: TranslationService){}
+
+
+changeLang(lang: string) {
+  this.translationService.loadTranslations(lang);
+}
 
 
     searchCtrl = new FormControl('');
